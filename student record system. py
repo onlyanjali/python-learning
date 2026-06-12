@@ -1,0 +1,45 @@
+students = [
+    {"name": "Anjali", "roll": 801, "marks": 96},
+    {"name": "Rahul", "roll": 802, "marks": 86}
+]
+
+user_name = input("Enter name: ")
+user_roll = int(input("Enter roll: "))
+user_marks = int(input("Enter marks: "))
+
+new_student = {
+    "name": user_name,
+    "roll": user_roll,
+    "marks": user_marks
+}
+
+students.append(new_student)
+
+print("\nStudent Records:")
+
+for student in students:
+    print(student)
+
+search_roll = int(input("\nEnter roll number to search: "))
+
+found = False
+
+for student in students:
+    if student["roll"] == search_roll:
+        print("Student Found")
+        print(student)
+        found = True
+
+        marks = student["marks"]
+
+        if marks >= 90:
+            print("Grade: A+")
+        elif marks >= 80:
+            print("Grade: B")
+        elif marks >= 70:
+            print("Grade: C")
+        else:
+            print("Grade: Below Average")
+
+if not found:
+    print("Student Not Found")
